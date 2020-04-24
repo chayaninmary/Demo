@@ -20,21 +20,22 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public CustomerData createCustomer(CustomerData cust) {
 		System.out.println("SERVICESSSSS!!!!!" + cust.getId());
-		return customerRepository.save(cust);
+		return customerRepository.save(cust); //repository class return save method to add new entry into database 
 	}
 
 	@Override
 	public CustomerData updateCustomer(CustomerData cust) {
 
-		return customerRepository.save(cust);
+		return customerRepository.save(cust); //repository class return save method to update existing ones into database 
 	}
 
 	@Override
-	public CustomerData getCustomer(Long custId) {
-		
+	public CustomerData getCustomer(Long custId) { //this method used to read customer data by customer id
+	 
 		Optional<CustomerData> optionalCust =  customerRepository.findById(custId);
+		//Optional object use for check if a customer id is existing or not
         if(optionalCust.isPresent()) {
-            return optionalCust.get();
+            return optionalCust.get(); //if customer id is exist then return a value
         }
 		return null;
 		
@@ -42,14 +43,14 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public void deleteCustomer(Long custId) {
-		
+		//delete by customer id
 		customerRepository.deleteById(custId);
 		
 	}
 
 	@Override
 	public List<CustomerData> getAllCustomer() {
-
+		//return all lists of customer details from database
 		return customerRepository.findAll();
 	}
 

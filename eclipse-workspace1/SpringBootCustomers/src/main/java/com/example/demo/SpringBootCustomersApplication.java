@@ -8,8 +8,9 @@ public class SpringBootCustomersApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootCustomersApplication.class, args);
-		//Flyway flyway = Flyway.configure().dataSource("jdbc:postgresql://localhost:5432/customers", "postgres", "root").load();
-		//flyway.migrate(); //Migratrion 
+	
+	//	Flyway flyway = Flyway.configure().dataSource("jdbc:postgresql://localhost:5432/customers", "postgres", "root").load();
+	//	flyway.migrate(); //excute a database migratrion 
 	}
 
 }
